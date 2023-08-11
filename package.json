@@ -1,0 +1,21 @@
+{
+  "name": "aws_lambda_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "lambda-build upload `YOUR_FUNCTION_NAME` -r ap-southeast-2",
+    "dev": "ts-node run.ts"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
