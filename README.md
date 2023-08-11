@@ -1,4 +1,4 @@
-## AWS Lambda Template To Locally Deploy Your Lambda Fast
+## 🚀 AWS Lambda Template To Locally Deploy Your Lambda Fast
 
 ### Things to configure breforehand
 
