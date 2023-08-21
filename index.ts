@@ -6,7 +6,7 @@ export const handler = async (
 ) => {
     var body
     try {
-        body = JSON.parse(event.body || "");
+        event = JSON.parse(event || "");
     } catch (err) {
         body = event.body;
     }
