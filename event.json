@@ -1,0 +1,21 @@
+{
+    "message": {
+        "message_id": 105,
+        "from": {
+            "id": 1637119208,
+            "is_bot": false,
+            "first_name": "Willow",
+            "username": "waiyanmt",
+            "language_code": "en"
+        },
+        "chat": {
+            "id": 1637119208,
+            "first_name": "Willow",
+            "username": "waiyanmt",
+            "type": "private"
+        },
+        "date": 1692855169,
+        "text": "/currency usd vnd 1",
+        "entities": [{ "offset": 0, "length": 9, "type": "bot_command" }]
+    }
+}

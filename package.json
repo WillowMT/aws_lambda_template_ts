@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "npx lambda-build upload `YOUR_FUNCTION_NAME` -r ap-southeast-2",
+    "deploy": "npx lambda-build upload badboyhook -r ap-southeast-1",
     "dev": "npx ts-node run.ts"
   },
   "keywords": [],

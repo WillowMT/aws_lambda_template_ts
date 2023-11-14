@@ -1,0 +1,29 @@
+willow
+11-Nov 5-7 Forest
+14-Nov 5-7 Wildlife
+15-Nov 5-7 Wildlife
+16-Nov 5-7 Wildlife
+17-Nov 5-7 Wildlife
+18-Nov 5-7 Wildlife
+20-Nov 5-7 Energy
+21-Nov 5-7 Ocean
+22-Nov 5-7 Ocean
+23-Nov 5-7 Ocean
+24-Nov 7-9 Ocean
+25-Nov 7-9 Climate
+
+bojeun
+
+dea
+
+laeticia
+
+
+output
+======
+
+2023-11-14%0A==========%0A1-3 Bojeun Forest%0A3-5 Laeti Forest%0A5-7 Willow Forest%0A7-9 Dea Forest
+
+
+2023-11-18
+~=========~
