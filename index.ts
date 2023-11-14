@@ -79,21 +79,12 @@ export const handler = async (
 
         if (text.startsWith("/room")) {
             // send user to select date
-            const query = `select role from whitelist where handle='@${handle}' limit 1`
-            const resp = await axios.post('https://buq5z8owbd.execute-api.ap-southeast-1.amazonaws.com/prod/planetscale-booking',{
-                sql:query
-            })
-
-            if (resp.data.length === 0 ) {
-                await sendMessage(chatId,'Cannot view as new user.%0APlease contact Network Administrator.')
-
-            } else if (resp.data[0].role === 'BLACKLIST') {
-                await sendMessage(chatId,'You dont have permission to view.')
-
-            } else if (resp.data[0].role === 'ADMIN' || resp.data[0].role === 'USER' ){
+            
+            if (!whitelist.includes(handle)) {
+                await sendMessage(chatId,'Permission Denied.')
+            } else {
                 const inline = get14DayInlineKeyboard()
                 await sendInlineMessage(chatId,'📆 Select Date To View',JSON.stringify(inline))
-
             }
 
 
@@ -101,17 +92,9 @@ export const handler = async (
 
         if (text.startsWith("/register")) {
             // check if valid user
-            let q = `select role from whitelist where handle='@${handle}' limit 1`
-            const {data} = await axios.post('https://buq5z8owbd.execute-api.ap-southeast-1.amazonaws.com/prod/planetscale-booking',{
-                sql:q
-            })
-
-            if (data.length === 0 ) {
-                await sendMessage(chatId,'Failed to register. Please contact Network Administrator.')
-                return statusOK
-
-            } else if (data[0].role === 'BLACKLIST') {
-                await sendMessage(chatId,'You are Forbidden from Registering.')
+            
+            if (!whitelist.includes(handle)) {
+                await sendMessage(chatId,'Permission Denied.')
                 return statusOK
             }
 
@@ -120,7 +103,7 @@ export const handler = async (
 
             if (list.length < 6) {
                 await sendMessage(chatId,"Not enough arguments.")
-                return {statusCode:200,body:"not enough arguments."}
+                return {statusCode:200,body:"Not enough arguments."}
             }
             // send user to select date
             let filtered = list.splice(1,100)
@@ -135,6 +118,8 @@ export const handler = async (
             
             if (resp.status == 200) {
                 await sendMessage(chatId,"Added!")
+            } else {
+                await sendMessage(chatId,"Operation Failed!")
             }
 
         }
